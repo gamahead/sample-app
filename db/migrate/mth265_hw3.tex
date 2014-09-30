@@ -1,0 +1,181 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{MTH 265: Homework 3\\
+\normalsize 
+p.27: 1.4.1, 1.4.3, 1.4.10, 1.4.12\\
+p.30: 1.5.1, 1.5.5\\
+p.42: 2.2.1, 2.2.2}
+\author{Joshua Rose}
+ 
+\maketitle
+
+
+\begin{exercise}{1.4.1}
+Without doing too much work, show how to prove Theorem 1.4.3 in the case where $a < 0$ by converting this case into the one already proven.
+\end{exercise}
+
+The case where $a < 0$ is not really that exciting. The real numbers continue to have the properties of real numbers when they are less than or equal to 0. Specifically, for the case where $a < 0 < b$, we can simply use Theorem 1.4.3. to infer that there is some $r \in R$ that is between 0 and $b$ since 0 and $b$ are both rational numbers $\geq 0$. We could also just say that $r = 0$ since 0 is a rational number between any number less than zero and a number greater than zero. In the case that $b \leq 0$, We can use symmetry to show that there is still a rational number $r$ such that $a < r < b$. By symmetry, I mean to say that the interval $(-\infty,0)$ looks exactly like $(0,\infty)$, so if you have two real numbers $a$ and $b$ such that $a < 0$, $b \leq 0$, $a\neq b$, and you doubt that there is a rational number between $a$ and $b$ because you're on the left side of 0, then you simply have to flip their signs and find $r$ on the right side between your positive $a$ and $b$, which you are guaranteed to find thanks to theorem 1.4.3. After finding $r$, you simply have to flip the sign of it to get the element you were looking for. 
+
+\begin{exercise}{1.4.3}
+Using Exercise 1.4.2, supply a proof for Corollary 1.4.4 by applying Theorem 1.4.3 to the real numbers $a-\sqrt{2}$ and $b-\sqrt{2}$.
+\end{exercise}
+
+\begin{proof}
+We want to prove that for any $a, b \in \R$ such that $a<b$, there exists some $k \in \I$ where $a < k < b$. From Exercise 1.4.2, we know that if $a \in \Q$ and $t \in \I$, then $a + t \in \I$ and $at \in \I$. Applying Theorem 1.4.3 to $a-\sqrt{2}$ and $b-\sqrt{2}$, we know that there is some $r \in \Q$ such that $a-\sqrt{2} < r < b-\sqrt{2}$. adding $\sqrt{2}$ to each part of the inequality yields $a < r+\sqrt{2} < b$. Since we know that $r \in \Q$ and $\sqrt{2} \in \I$, from exercise 1.4.2, we know that $r + \sqrt{2} \in \I$. Thereby, we have shown that there is some irrational number between any two unique, real numbers. 
+\end{proof}
+
+\begin{exercise}{1.4.10}
+Show that the set of all finite subsets of $\N$ is a countable set. (It turns out that the set of $all$ subsets of $\N$ is not a countable set. This is the topic of Section 1.5.)
+\end{exercise}
+
+We will be making use of Theorem 1.4.13 $(ii)$, which states that If $A_n$ is a countable set for each $n \in \N$, then $\bigcup_{n=1}^{\infty}A_n$ is countable. 
+
+Now, let the set of all finite subsets of $\N$ be denoted by $K$.
+
+\noindent It is apparent that since $\N$ is infinite, there will be an infinite number of finite subsets of $\N$. We also know from the question that each subset $k_i \in \N, K$ is finite, which means that each $k_i$ is countable. By Theorem 1.4.13, we know that
+$$K = \bigcup_{i=1}^{\infty}k_i,$$
+must therefore be countable\footnote{It could also be shown that $K$ is countable by showing that $K \sim N$, but that approach seems like it would take a substantial amount more time to work out in detail.}.
+
+\begin{exercise}{1.4.12}
+A real number $x \in{\R}$ is called $\textit{algebraic}$ if there exist integers $a_0, a_1, a_2, \ldots, a_n \in \Z$, not all zero, such that $$a_n x^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0 = 0.$$ Said another way, a real number is algebraic if it is the root of a polynomial with integer coefficients. Real numbers that are not algebraic are called $\textit{transcendental}$ numbers. Reread the last paragraph of Section 1.1. The final question posed here is closely related to the question of whether or not transcendental numbers exist.
+
+(a) Show that $\sqrt{2}, \sqrt[3]{2}, and \sqrt{3} + \sqrt{2}$ are algebraic.
+
+(b) Fix $n \in \N$, and let $A_n$ be the algebraic numbers obtained as roots of polynomials with integer coefficients that have degree $n$. Using the fact that every polynomial has a finite number of roots, show that $A_n$ is countable. (For each $m \in \N$, consider polynomials $a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0$ that satisfy $|a_n|+|a_{n−1}|+\ldots+|a_1|+|a_0|\leq m$.)
+
+(c) Now, argue that the set of all algebraic numbers is countable. What may we conclude about the set of transcendental numbers? 
+\end{exercise}
+
+\noindent (a) We need only find a polynomial with coefficients in $\Z$ for $\sqrt{2}, \sqrt[3]{2}, and \sqrt{3} + \sqrt{2}.$ These polynomials are easily constructed by recognizing that if we know a root, we can simply work backward from having the solution to the polynomial. That may not have made a lot of sense, but here's what I mean: \newline
+
+\noindent $(\sqrt{2})$: Let $f_{\sqrt{2}}(x)$ be a polynomial for which $\sqrt{2}$ is a root. Since we know that $\sqrt{2}$ is a root, we know that $x = \sqrt{2} \rightarrow x^2 = 2 \rightarrow x^2 - 2 = 0 \rightarrow f_{\sqrt{2}}(x) = x^2 - 2.$ \newline
+
+\noindent $(\sqrt[3]{2})$: Let $f_{\sqrt[3]{2}}(x)$ be a polynomial for which $\sqrt[3]{2}$ is a root. Since we know that $\sqrt[3]{2}$ is a root, we know that $x = \sqrt[3]{2} \rightarrow x^3 = 2 \rightarrow x^3 - 2 = 0 \rightarrow f_{\sqrt[3]{2}}(x) = x^3 - 2.$ \newline
+
+\noindent $(\sqrt{2} + \sqrt{3})$: Let $f_{\sqrt{2} + \sqrt{3}}(x)$ be a polynomial for which $\sqrt{2} + \sqrt{3}$ is a root. Since we know that $\sqrt{2} + \sqrt{3}$ is a root, we know that $x = \sqrt{2} + \sqrt{3} \rightarrow x^2 = (\sqrt{2} + \sqrt{3})^2 \rightarrow x^2 = 2\sqrt{6} + 3 + 2 \rightarrow x^2 - 3 - 2 = 2\sqrt{6} \rightarrow (x^2 - 3 - 2)^2 = 24 \rightarrow x^4 - 10x^2 + 25 = 24 \rightarrow x^4 - 10x^2 + 1 = 0 \rightarrow f_{\sqrt{2} + \sqrt{3}}(x) = x^4 - 10x^2 + 1$\newline
+
+\noindent The set of all polynomials of degree $n$ will be denoted by $P$ \newline
+
+\noindent (b) Since the polynomials that we are concerned with have coefficients in $\Z$, we will recycle some of the argument made for the countability of the set of all finite subsets of $\N$ used in Exercise 1.4.10. First, notice that we can think of each polynomial with degree $n$ as a sequence of length $n+1$ where the entries in the sequence are the coefficients of each polynomial in order: 
+$$\{a_n,a_{n-1},\ldots,a_1,a_0\}$$
+
+The importance of the sequence having length $n+1$ and order is that each sequence is finite, and that we can think of $P$ as the Cartesian Product of $\Z$ with itself $n+1$ times: $$P = \Z \times \Z \times \ldots \times \Z$$. 
+
+Now we know that $P$ is countable\footnote{It seems unnecessary to prove that the Cartesian Product of countable sets is itself countable, so I hope I am not required to do that}, so all we need to do now is show that $A_n$ is countable. This is accomplished by noticing that the set $A_n$ can be thought of as the union of each set of roots corresponding to each unique polynomial. Specifically, 
+$$A_n = \bigcup_{i=1}^{\infty}r_i,$$
+where each $r_i$ is the set of roots of the corresponding polynomial\footnote{Of course, an ordering of the polynomials in $P$ would need to be defined before this kind of calculation could actually take place.}. This definition of $A_n$ agrees with Theorem 1.4.13's requirement to be a countable set, so we are done. \newline
+
+\noindent (c) We will denote the set of all algebraic numbers by $A$. Applying our argument from part b to the sets of algebraic numbers that are roots of polynomials of degree $\neq n$, we find that each of these sets of algebraic numbers, $A_i$, is countable. Thus, we have $$A = \bigcup_{n=1}^{\infty}A_i.$$
+Employing Theorem 1.4.13 again, it is clear that $A$ is countable since it is the union of countable sets. From this result, we can conclude that the transcendental numbers must be uncountable if the algebraic numbers are countable.
+
+\begin{exercise}{1.5.1}
+Show that $(0,1)$ is uncountable if and only if $\R$ is uncountable. This shows that Theorem 1.5.1 is equivalent to Theorem 1.4.11.
+\end{exercise}
+
+\begin{proof}
+
+Let $(0,1)$ be uncountable. It must now be shown that $\R$ is uncountable. To do this, first assume that $\R$ is countable and then wait for the contradiction. Theorem 1.4.12. states that if $A \subseteq B$ and $B$ is countable, then $A$ is either countable, finite, or empty. Since $(0,1) \subset \R$, $\R$ is allegedly countable, and $(0,1)$ is uncountable, there is either a contradiction or Theorem 1.4.12 is wrong. There is probably (definitely) a contradiction. 
+
+Now assume that $\R$ is uncountable. It must be shown that $(0,1)$ is uncountable. If we're going to assume that $\R$ is uncountable now, then I think it is safe to say that we can take advantage of the fact that $\R$ contains the irrational numbers. Otherwise, it wouldn't actually be uncountable. Given this information, it seems somewhat obvious that $(0,1)$ would also contain irrationals since $(0,1) \subseteq \R$, making it uncountable, but I guess we must be more certain. 
+
+First, consider all of the irrational numbers in the interval $(1,2)$. There are a lot. Now we can construct a very simple function $f: (1,2) \rightarrow (0,1)$ defined by $f(x) = x - 1$ for $x \in (1,2)$. This function will map every one of the irrational numbers in $(1,2)$ that we can't count, to their counterparts in $(0,1)$. If $(0,1)$ is not uncountable, then $f(x)$ would map all of the irrationals in $(1,2)$ to oblivion, which seems like a contradiction. It should also be noted that $f(x)$ is a bijection between $(0,1)$ and $(1,2)$, which demonstrates structural similarity.
+
+\end{proof}
+
+\begin{exercise}{1.5.5}
+(a) Let $A = \{a,b,c\}$. List the eight elements of $P(A)$. (Do not forget that $\varnothing$ is considered to be a subset of every set.) 
+
+(b) If $A$ is finite with $n$ elements, show that $P(A)$ has $2^n$ elements. (Constructing a particular subset of $A$ can be interpreted as making a series of decisions about whether or not to include each element of $A$.)
+\end{exercise}
+
+\noindent (a) $P(A) = \{\{a\},\{b\},\{c\},\{\varnothing\},\{a,b\},\{b,c\},\{a,c\},\{a,b,c\}\}$ \\
+\noindent (b) To help think about this combinatorial problem, we can represent the elements in $A$ with a binary string that is n bits long where, when choosing a unique set, the included items are represented with a 1 and the left-behind items are represented with a zero. For example, in (a), picking $a$ and $b$ from $A$ would have the bitstring representation 110, and $\varnothing$'s bit string has representation 000. There are $2^n$ subsets of $A$/sets of $P(A)$ because the total number of possible bit strings is $2*2*2*\ldots*2*2 = 2^n$ because each bit has 2 states, and the total number of combinations is found by multiplying the number of states available for each contributing category. For this problem, there are $n$ categories with 2 states each.
+
+\begin{exercise}{2.2.1}
+Verify, using the definition of convergence of a sequence, that the following sequences converge to the proposed limit.
+
+(a) $\lim \frac{1}{(6n^2 + 1)} = 0.$
+
+(b) $\lim \frac{3n+1}{(2n + 5)} = \frac{3}{2}.$
+
+(c) $\lim \frac{2}{\sqrt{n+3}} = 0.$
+\end{exercise}
+
+\noindent \textbf{Disclaimer:} I followed Abbott's format for proving convergence very closely (page 42) because I still don't fully understand how to do these!
+
+\begin{proof} (a) According to Abbott, the last line of our proof should be that for suitably large values of n, $$\left|\frac{1}{(6n^2 + 1)}-0\right| < \epsilon.$$ Let $\epsilon > 0$ be arbitrary. Choose $N \in \N$ with $N > 1/\sqrt{6\epsilon}$. To verify that this choice of $N$ is appropriate, let $n \in \N$ satisfy $n \geq N$. Then $n \geq N$ implies $n > 1/\sqrt{6\epsilon}$, which is the same as saying $\frac{1}{6n^2} < \epsilon$. Finally, since $6n^2 + 1 > 6n^2$, we have  $$\left|\frac{1}{(6n^2 + 1)}-0\right| < \frac{1}{6n^2} \leq \frac{1}{6N^2} \leq \epsilon,$$ as desired
+\end{proof}
+
+\begin{proof}
+\noindent (b) The last line of our proof should look like $$\left|\frac{3n+1}{2n + 5} - \frac{3}{2}\right| < \epsilon.$$ Simplify to find a suitable N: $$\left|\frac{3n+1}{2n + 5} - \frac{3}{2}\right| = \left|\frac{-13}{4n+10}\right| = \frac{13}{4n+10} < \frac{13}{4n}$$
+
+Let $\epsilon > 0$ be arbitrary. Choose $N \in \N$ with $N > 13/4\epsilon$. To verify that this choice of $N$ is appropriate, let $n \in \N$ satisfy $n \geq N$. Then $n \geq N$ implies $n > 13/4\epsilon$, which is the same as saying $13/4n < \epsilon$. Finally, since $4n-10 > 4n$, we have  $$\left|\frac{13}{(4n+10)}-0\right| < \frac{13}{4n} \leq \frac{13}{6N} \leq \epsilon,$$ as desired
+\end{proof}
+
+\begin{proof}
+\noindent (c) The last line of our proof should look like $$\left|\frac{2}{\sqrt{n+3}} - 0\right| = \frac{2}{\sqrt{n+3}} < \epsilon.$$ 
+
+Let $\epsilon > 0$ be arbitrary. Choose $N \in \N$ with $N > 4/\epsilon^2 - 3$. To verify that this choice of $N$ is appropriate, let $n \in \N$ satisfy $n \geq N$. Then $n \geq N$ implies $n > 4/\epsilon^2 - 3$, which is the same as saying $2/\sqrt{n+3} < \epsilon$. Finally, we have  $$\left|\frac{2}{(n+3)}-0\right| \leq \frac{2}{\sqrt{N+3}} \leq \epsilon,$$ as desired
+\end{proof}
+
+\begin{exercise}{2.2.2}
+What happens if we reverse the order of the quantifiers in Definition 2.2.3?
+
+$\textit{Definition:}$ A sequence $(x_n)$ $\textit{verconges}$ to $x$ if $\textit{there exists}$ an $\epsilon > 0$ such that $\textit{for all}$ $N \in \N$ it is true that $n \geq N$ implies $|x_n-x| < \epsilon$.
+
+Give an example of a vercongent sequence. Can you give an example of a vercongent sequence that is divergent? What exactly is being described in this strange definition? 
+\end{exercise}
+
+\noindent The definition is confusing, but the quantifier changes are easy to spot. Sequences are to defined to be vercongent when there is only one $\epsilon > 0$ that satisfies the relation $\left|x_n - x \right| < \epsilon$. However, the relation has to hold for all $N \in \N$. Any bounded sequence would be vercongent to a number $x$ provided that you define the $\epsilon$ to be far enough away. I'll use the sequence
+
+\begin{displaymath}
+f(x) = \left\{
+\begin{array}{lr}
+1 & : 2 \mid n  \\
+0 & : else
+\end{array}
+\right.
+\end{displaymath}.
+
+$f(x)$ is vercongent to 1/2 with $\epsilon = 2304958234$. $f(x)$ is also divergent, and I already talked about what exactly the definition is describing. 
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
